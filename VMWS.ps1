@@ -1,11 +1,22 @@
 # List of essential/core services for Windows 10 + VMware
 $essentialServices = @(
-    # Core Windows
-    "WinDefend","wuauserv","MpsSvc","BITS","EventLog","PlugPlay","RpcSs",
-    "lanmanworkstation","lanmanserver","Spooler","Audiosrv","Dhcp","Dnscache","Themes",
-    "ShellHWDetection","Power","Wmi","SamSs","LSM","TokenBroker","SecurityHealthService",
-    # VMware
-    "VMAuthdService", "VMUSBArbService", "VMnetDHCP", "VMwareHostd", "VMware NAT Service"
+    # Core OS
+    "RpcSs",        # Remote Procedure Call (RPC)
+    "PlugPlay",     # Plug and Play (hardware detection)
+    "LSM",          # Local Session Manager
+    "SamSs",        # Security Accounts Manager
+    "Wmi",          # Windows Management Instrumentation
+
+    # Networking (adjust if you need networks in VMs)
+    "Dhcp",         # DHCP Client (if using dynamic IP)
+    "Dnscache",     # DNS Client
+
+    # VMware Services (required for VMware Workstation)
+    "VMAuthdService",       # VMware Authorization Service
+    "VMUSBArbService",      # VMware USB Arbitration Service
+    "VMnetDHCP",            # VMware DHCP Service
+    "VMwareHostd",          # VMware Workstation Server
+    "VMware NAT Service"    # VMware NAT Service
 )
 
 # Get all running, non-essential services
